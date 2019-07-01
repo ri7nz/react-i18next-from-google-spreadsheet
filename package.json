@@ -1,0 +1,31 @@
+{
+  "name": "react-i18next-from-google-spreadsheet",
+  "version": "1.0.0",
+  "description": "Tool to generate `react-i18next` json files from google spreadsheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests/*.spec.js",
+    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikhail-angelov/react-i18next-from-google-spreadsheet.git"
+  },
+  "keywords": [
+    "i18n",
+    "react-i18next",
+    "google",
+    "spreadsheet"
+  ],
+  "author": "Mikhail Angelov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikhail-angelov/react-i18next-from-google-spreadsheet/issues"
+  },
+  "homepage": "https://github.com/mikhail-angelov/react-i18next-from-google-spreadsheet#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "google-spreadsheet": "^2.0.7",
+    "mocha": "^6.1.4"
+  }
+}
