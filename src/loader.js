@@ -1,9 +1,6 @@
 const GoogleSpreadsheet = require('google-spreadsheet')
 const fs = require('fs')
-const folderName = './locales'
-
-// todo: implement google spreadsheet load and processing
-// example: https://github.com/mikhail-angelov/gulp-translations-from-spreadsheet/blob/master/index.js
+const TRANSLATION_FILE = 'translation.json'
 
 const load = (options, cb) => {
   const my_sheet = new GoogleSpreadsheet(options.docId)
@@ -99,19 +96,19 @@ const save = (options, data) => {
     try {
       fs.existsSync(`${folderName}/${lang}`)
     } catch(e) {
-      console.log(`Invalid 'language' name: ${lang}`)
+      console.log(`Invalid 'language' name: ${lang}`, e)
       throw `Invalid 'language' name: ${lang}`
     }
     if (!fs.existsSync(`${folderName}/${lang}`)) {
       try {
         fs.mkdirSync(`${folderName}/${lang}`)
       } catch(e) {
-        console.log(`Invalid 'language' name: ${lang}`)
+        console.log(`Invalid 'language' name: ${lang}`, e)
         throw `Invalid 'language' name: ${lang}`
       }
     }
     const content = JSON.stringify(data[lang])
-    fs.writeFileSync(`${folderName}/${lang}/translations.json`, content)
+    fs.writeFileSync(`${folderName}/${lang}/${TRANSLATION_FILE}`, content)
   })
 }
 
