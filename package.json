@@ -2,7 +2,7 @@
   "name": "react-i18next-from-google-spreadsheet",
   "version": "1.0.0",
   "description": "Tool to generate `react-i18next` json files from google spreadsheet",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha ./tests/*.spec.js",
     "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
@@ -26,6 +26,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "google-spreadsheet": "^2.0.7",
+    "minimist": "^1.2.0",
     "mocha": "^6.1.4"
   }
 }
