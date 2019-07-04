@@ -90,7 +90,7 @@ const save = (options, data) => {
     if (!fs.existsSync(folderName)) {
       fs.mkdirSync(folderName)
     }
-  } catch (error) {
+  } catch (e) {
     console.log(`Invalid 'location' parameter: ${folderName}`)
     throw `Invalid 'location' parameter: ${folderName}`
   }
@@ -98,14 +98,14 @@ const save = (options, data) => {
   Object.keys(data).forEach(lang => {
     try {
       fs.existsSync(`${folderName}/${lang}`)
-    } catch {
+    } catch(e) {
       console.log(`Invalid 'language' name: ${lang}`)
       throw `Invalid 'language' name: ${lang}`
     }
     if (!fs.existsSync(`${folderName}/${lang}`)) {
       try {
         fs.mkdirSync(`${folderName}/${lang}`)
-      } catch {
+      } catch(e) {
         console.log(`Invalid 'language' name: ${lang}`)
         throw `Invalid 'language' name: ${lang}`
       }
