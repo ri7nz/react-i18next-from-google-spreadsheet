@@ -107,7 +107,7 @@ const save = (options, data) => {
         throw `Invalid 'language' name: ${lang}`
       }
     }
-    const content = JSON.stringify(data[lang])
+    const content = JSON.stringify(data[lang], null, '\t')
     fs.writeFileSync(`${folderName}/${lang}/${TRANSLATION_FILE}`, content)
   })
 }
