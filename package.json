@@ -1,5 +1,5 @@
 {
-  "name": "react-i18next-from-google-spreadsheet",
+  "name": "@ri7nz/react-i18next-from-google-spreadsheet",
   "version": "1.1.0",
   "description": "Tool to generate `react-i18next` json files from google spreadsheet",
   "main": "src/index.js",
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/mikhail-angelov/react-i18next-from-google-spreadsheet#readme",
   "dependencies": {
     "chai": "^4.2.0",
-    "google-spreadsheet": "^2.0.7",
+    "google-spreadsheet": "^3.1.15",
     "minimist": "^1.2.0",
     "mocha": "^6.1.4"
   }
